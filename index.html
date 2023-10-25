@@ -14,7 +14,7 @@ Previously, I completed my Computer Science bachelor's and master's at Vienna Un
 In my free time, I enjoy creating very fast Rubik's Cube solving robots, some of which have set new world-records and have gathered several million views on YouTube.
 </p>
 
-<h1>Publications</h1>
+<h1>Selected Publications</h1>
 
 <p>
   <b>Scaling Laws for Sparsely-connected Foundation Models</b><br>
@@ -46,12 +46,32 @@ In my free time, I enjoy creating very fast Rubik's Cube solving robots, some of
   </ul>
 </p>
 
-<ul>
-  <li> Elias Frantar, Saleh Ashkboos, Torsten Hoefler, Dan Alistarh. GPTQ: Accurate Post-Training Quantization for Generative Pre-Trained Transformers, Under Review. </li>
-  <li> Denis Kuznedelev, Eldar Kurtic, Elias Frantar, Dan Alistarh. oViT: An Accurate Second-Order Pruning Framework for Vision Transformers, Under Review. </li>
-  <li> Eldar Kurtic, Daniel Campos, Tuan Nguyen, Elias Frantar, Mark Kurtz, Benjamin Fineran, Michael Goin, Dan Alistarh. The Optimal BERT Surgeon: Scalable and Accurate Second-Order Pruning for Large Language Models, EMNLP 2022.</li>
-  <li> Elias Frantar, Dan Alistarh. Optimal Brain Compression: A Framework for Accurate Post-Training Quantization and Pruning, NeurIPS 2022. </li>
-  <li> Elias Frantar, Dan Alistarh. SPDY: Accurate Pruning with Speedup Guarantees, ICML 2022. </li>
-  <li> Elias Frantar, Eldar Kurtic, Dan Alistarh. M-FAC: Efficient Matrix-Free Approximations of Second-Order Information, NeurIPS 2021. </li>
-  <li> Nikola Konstantinov, Elias Frantar, Dan Alistarh, Christoph Lampert. On the Sample Complexity of Adversarial Multi-Source PAC Learning, ICML 2020. </li>
-</ul>
+<p>
+  <b>Optimal Brain Compression: A Framework for Accurate Pruning and Quantization</b><br>
+  NeurIPS 2022 - Elias Frantar, Sidak Pal Singh, Dan Alistarh<br>
+  <a href="https://arxiv.org/abs/2208.11580">[arxiv]</a> <a href="https://github.com/IST-DASLab/OBC">[github]</a>
+  <ul>
+    <li>We show that the classic Optimal Brain Surgeon pruning framework can be implemented *exactly* for layer-wise pruning of modern networks, via new algorithmic techniques, and that it can be extended to perform quantization as well.</li>
+    <li>This yields state-of-the-art retraining-free pruning, quantization and mixed pruning & quantization accuracy.</li>
+  </ul>
+</p>
+
+<p>
+  <b>Accurate Pruning with Speedup Guarantees</b><br>
+  ICML 2022 - Elias Frantar, Dan Alistarh<br>
+  <a href="https://arxiv.org/abs/2201.13096">[arxiv]</a> <a href="https://github.com/IST-DASLab/spdy">[github]</a>
+  <ul>
+    <li>We introduce a new system for automatically pruning networks to specific real-word inference speedup targets, while minimizing accuracy loss.</li>
+    <li>SPDY brings state-to-the-art speedup-vs-accuracy trade-offs in a sparsity-aware CPU inference engine, for both vision and language domains.</li>
+  </ul>
+</p>
+
+<p>
+  <b>M-FAC: Efficient Matrix-Free Approximations of Second-Order Information</b><br>
+  NeurIPS 2021 - Elias Frantar, Eldar Kurtic, Dan Alistarh<br>
+  <a href="https://arxiv.org/abs/2107.03356">[arxiv]</a> <a href="https://github.com/IST-DASLab/M-FAC">[github]</a>
+  <ul>
+    <li>We develop the first algorithms for dealing with empirical Fisher approximations that efficiently scale to arbitrarily large blocksizes.</li>
+    <li>Those lead to a state-of-the-art pruning algorithm and, supported by efficient CUDA kernels, to a full-matrix second-order optimizer with competitive training and finetuning performance.</li>
+  </ul>
+</p>
