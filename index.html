@@ -1,77 +1,101 @@
 ---
 layout: home
 title: Elias Frantar
-subtitle: Machine Learning PhD Candidate @ IST Austria
+subtitle: Large Model Efficiency &amp; Compression
 ---
 
-<p>
-I am a fourth-year Computer Science PhD candidate at IST Austria, supervised by Dan Alistarh, working on practical neural network compression.
-Currently, I am particularly interested in quantizing and sparsifying very large models in order to make them more resource-efficient and accessible.
-Recently, I was also a Student Researcher at Google Deepmind where I worked on large-scale model compression and sparsity scaling laws for foundation models.
-</p>
-<p>
-Previously, I completed my Computer Science bachelor's and master's at Vienna University of Technology for which I received the Austrian State Prize that is awarded to the top 0.3% of graduates in the country.
-In my free time, I enjoy creating very fast Rubik's Cube solving robots, some of which have set new world-records and gathered 10+ million views on <a href="https://www.youtube.com/eliasfrantar">YouTube</a>.
-</p>
+I am currently a <b>fourth-year PhD student at ISTAustria</b>, supervised by Dan Alistarh, as well as a <b>second-time intern at Google DeepMind</b>. Overall, my research is focused on making massive machine learning models more efficient.
+<br><br>
+In 2022, I developed the first successful low-bit quantization and sparsification methods for extremely large language models, <a href=https://arxiv.org/abs/2210.17323>GPTQ</a> and <a href="https://arxiv.org/abs/2301.00774">SparseGPT</a>. In 2023, I identified <a href="https://arxiv.org/abs/2309.08520)">scaling laws for sparsely-connected foundation models</a>, and built <a href="https://arxiv.org/abs/2310.16795">QMoE</a>, a tool for efficient compression and execution of trillion-parameter Mixture-of-Expert models in limited-resource settings. Most recently, I implemented <a href="https://github.com/IST-DASLab/marlin">Marlin</a>, the first INT4xFP16 LLM inference kernel with near-ideal speedup at medium batchsizes.
+<br><br>
+In my free time, I love creating super fast Rubik's Cube solving robots, some of which have beaten long-standing records and collected millions of views on <a href="https://www.youtube.com/eliasfrantar">YouTube</a>.
 
-<h1>Selected Publications</h1>
+<h2 id="highlights">Highlighted Work</h2>
 
-<p>
-  <b>Scaling Laws for Sparsely-Connected Foundation Models</b><br>
-  Preprint 2023 - <u>Elias Frantar</u>, Carlos Riquelme, Neil Houlsby, Dan Alistarh, Utku Evci<br>
-  <a href="https://arxiv.org/abs/2309.08520">[arxiv]</a>
-  <ul>
-    <li>We determine the first scaling laws connecting parameter-sparsity, effective model size and amount of training data, in the context of modern Transformers trained on massive datasets.</li>
-    <li>These laws characterize in which training settings which sparsity level is optimal and how much better sparse models can perform than dense ones.</li>
-  </ul>
-</p>
+<h4>GPTQ (ICLR 2023):</h4>
 
-<p>
-  <b>SparseGPT: Massive Language Models Can be Accurately Pruned in One-shot</b><br>
-  Oral, ICML 2023 - <u>Elias Frantar</u>r, Dan Alistarh<br>
-  <a href="https://arxiv.org/abs/2301.00774">[arxiv]</a> <a href="https://github.com/IST-DASLab/sparsegpt">[github]</a>
-  <ul>
-    <li>We introduce the first pruning algorithm that is fast and accurate enough to successfuly impose non-trivial amounts of sparsity on 100+ billion parameter models.</li>
-    <li>In addition to unstructured pruning, SparseGPT generalizes to the hardware-friendly 2:4 sparsity pattern and can be combined with quantization.</li>
-  </ul>
-</p>
+<ul>
+  <li>The first quantization method able to accurately compress massive LLMs to 4- or 3-bit precision.</li>
+  <li>The first open-source GPU kernel demonstrating major generative inference speedup with standard weight-only quantization.</li>
+  <li>Supported by various popular libraries: HuggingFace's transformers, NVIDIA's TensorRT-LLM, Intel's neural-compressor.</li>
+  <li>1.5k+ stars on <a href="https://github.com/IST-DASLab/gptq">GitHub</a>; with popular forks AutoGPTQ (3k+ stars) and GPTQ-for-LLaMa (2.5k+ stars).</li>
+</ul>
 
-<p>
-  <b>GPTQ: Accurate Post-training Quantization for Generative Pretrained Transformers</b><br>
-  ICLR 2023 - <u>Elias Frantar</u>, Saleh Ashkboos, Torsten Hoefler, Dan Alistarh<br>
-  <a href="https://arxiv.org/abs/2210.17323">[arxiv]</a> <a href="https://github.com/IST-DASLab/gptq">[github]</a>
-  <ul>
-    <li>We develop the first quantization algorithm that is fast and accurate enough to successfully quantize 100+ billion parameter models to 4-bit and 3-bit precision.</li>
-    <li>We demonstrate for the first time, via custom CUDA kernels, that vanilla weight-only quantization can bring substantial practical speedups for memory-bound generative inference.</li>
-  </ul>
-</p>
+<h4>SparseGPT (Oral, ICML 2023):</h4>
 
-<p>
-  <b>Optimal Brain Compression: A Framework for Accurate Pruning and Quantization</b><br>
-  NeurIPS 2022 - <u>Elias Frantar</u>, Sidak Pal Singh, Dan Alistarh<br>
-  <a href="https://arxiv.org/abs/2208.11580">[arxiv]</a> <a href="https://github.com/IST-DASLab/OBC">[github]</a>
-  <ul>
-    <li>We show that the classic Optimal Brain Surgeon pruning framework can be implemented <i>exactly</i> for layer-wise pruning of modern networks, via new algorithmic techniques, and that it can be extended to perform quantization as well.</li>
-    <li>This yields state-of-the-art retraining-free pruning, quantization and mixed pruning & quantization accuracy.</li>
-  </ul>
-</p>
+<ul>
+  <li>The first algorithm able to accurately induce significant sparsity in 100+ billion parameter models.</li>
+  <li>Featured by Communications of the ACM and national television.</li>
+  <li>Invited talks at Apple, Amazon and Google.</li>
+  <li> 500+ stars on <a href="https://github.com/IST-DASLab/sparsegpt">GitHub</a>.</li>
+</ul>
 
-<p>
-  <b>Accurate Pruning with Speedup Guarantees</b><br>
-  ICML 2022 - <u>Elias Frantar</u>, Dan Alistarh<br>
-  <a href="https://arxiv.org/abs/2201.13096">[arxiv]</a> <a href="https://github.com/IST-DASLab/spdy">[github]</a>
-  <ul>
-    <li>We introduce a new system for automatically pruning networks to specific real-word inference speedup targets, while minimizing accuracy loss.</li>
-    <li>SPDY brings state-to-the-art speedup-vs-accuracy trade-offs in a sparsity-aware CPU inference engine, for both vision and language domains.</li>
-  </ul>
-</p>
+<hr>
 
-<p>
-  <b>M-FAC: Efficient Matrix-Free Approximations of Second-Order Information</b><br>
-  NeurIPS 2021 - <u>Elias Frantar</u>, Eldar Kurtic, Dan Alistarh<br>
-  <a href="https://arxiv.org/abs/2107.03356">[arxiv]</a> <a href="https://github.com/IST-DASLab/M-FAC">[github]</a>
-  <ul>
-    <li>We develop the first algorithms for dealing with empirical Fisher approximations that efficiently scale to arbitrarily large blocksizes.</li>
-    <li>Those lead to a state-of-the-art pruning algorithm and, supported by efficient CUDA kernels, to a full-matrix second-order optimizer with competitive training and finetuning performance.</li>
-  </ul>
-</p>
+<h4>Rubik's Cube Robots:</h4>
+
+<ul>
+  <li>10+ million views on Youtube; also presented live on BBC.</li>
+  <li><a href="https://www.youtube.com/watch?v=Kjb-MmwueEQ">Cuboth</a>: the world's fastest robot to solve an unmodified Rubik's Cube, beating the previous record, which stood for 7 years, by 2x, while using equivalent hardware.</li>
+  <li> <a href="https://github.com/efrantar/rob-twophase">rob-twophase</a> &amp; <a href="https://github.com/efrantar/qphase">qphase</a>: the current best computer solving algorithms; also the first to directly take into account robot mechanics during the search process.</li>
+  <li> <a href="https://www.youtube.com/watch?v=wLzn1w8vgM4">SquidCuber</a>: the first machine made entirely out of Lego to solve a cube in a single second on average (2x faster than the 5-year-long-standing previous record).</li>
+</ul>
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=Kjb-MmwueEQ"><img src="assets/img/cuboth.jpg" width="275px"></img></a>
+  <a href="https://www.youtube.com/watch?v=wLzn1w8vgM4"><img src="assets/img/squidcuber.jpg" width="275px"></img></a>
+</div>
+
+<h2 id="papers">First-Author Papers</h2>
+
+<h4>QMoE: Practical Sub-1-Bit Compression of Trillion-Parameter Models</h4>
+<h6><i>2023</i> - <u>Elias Frantar</u>, Dan Alistarh - <a href="https://arxiv.org/abs/2310.16795">[arxiv]</a>, <a href="https://github.com/IST-DASLab/qmoe">[github]</a>.</h6>
+We compress a trillion-parameter Mixture-of-Experts model to, for the first time, sub-1-bit per parameter, in a custom format co-designed with an efficient inference kernel.
+
+<h4>Scaling Laws for Sparsely-Connected Foundation Models</h4>
+<h6><i>SPOTLIGHT, ICLR 2024</i> - <u>E. Frantar</u>, C. Riquelme, N. Houlsby, D. Alistarh, U. Evci - <a href="https://arxiv.org/abs/2309.08520">[arxiv]</a>.</h6>
+We determine the first scaling laws connecting parameter-sparsity, effective model size and amount of training data, in the context of modern Transformers trained on massive datasets.</li>
+
+<h4>SparseGPT: Massive Language Models Can be Accurately Pruned in One-shot</h4>
+<h6><i>ORAL, ICML 2023</i> - <u>Elias Frantar</u>, Dan Alistarh - <a href="https://arxiv.org/abs/2301.00774">[arxiv]</a>, <a href="https://github.com/IST-DASLab/sparsegpt">[github]</a>.</h6>
+We introduce the first pruning algorithm that is fast and accurate enough to successfuly impose non-trivial amounts of sparsity on 100+ billion parameter models.
+
+<h4>GPTQ: Accurate Post-training Quantization for Generative Pretrained Transformers</h4>
+<h6><i>ICLR 2023</i> - <u>E. Frantar</u>, S. Ashkboos, T. Hoefler, D. Alistarh - <a href="https://arxiv.org/abs/2210.17323">[arxiv]</a>, <a href="https://github.com/IST-DASLab/gptq">[github]</a>.</h6>
+We develop the first quantization algorithm that is fast and accurate enough to successfully quantize 100+ billion parameter models to 4-bit and 3-bit precision.
+
+<h4>Optimal Brain Compression: A Framework for Accurate Pruning and Quantization</h4>
+<h6><i>NeurIPS 2022</i> - <u>Elias Frantar</u>, Sidak Pal Singh, Dan Alistarh - <a href="https://arxiv.org/abs/2208.11580">[arxiv]</a>, <a href="https://github.com/IST-DASLab/OBC">[github]</a>.</h6>
+We show that the classical Optimal Brain Surgeon pruning framework can be implemented exactly on a layer-wise level and extended to quantization, leading to state-of-the-art post-training compression results.
+
+<h4>Accurate Pruning with Speedup Guarantees</h4>
+<h6><i>ICML 2022</i> - <u>Elias Frantar</u>, Dan Alistarh - <a href="https://arxiv.org/abs/2201.13096">[arxiv]</a>, <a href="https://github.com/IST-DASLab/spdy">[github]</a>.</h6>
+We introduce new techniques for runtime- and hardware-aware sparsification, with state-of-the-art speedup-vs-accuracy trade-offs, for vision and text domains.
+
+<h4>M-FAC: Efficient Matrix-Free Approximations of Second-Order Information</h4>
+<h6><i>NeurIPS 2021</i> - <u>Elias Frantar</u>, Eldar Kurtic, Dan Alistarh - <a href="https://arxiv.org/abs/2107.03356">[arxiv]</a>, <a href="https://github.com/IST-DASLab/M-FAC">[github]</a>.</h6>
+We develop new algorithms for dealing with empirical Fisher approximations that efficiently scale to arbitrarily large blocksizes, with applications to pruning and optimization.
+
+<h2>Other Publications</h2>
+
+<h4>SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression</h4>
+<h6><i>ICLR 2024</i> - T. Dettmers, R. Svirschevski, V. Egiazarian, D. Kuznedelev, <u>E. Frantar</u>, ...</h6>
+<hr>
+<h4>ZipLM: Hardware-Aware Structured Pruning of Language Models</h4>
+<h6><i>NeurIPS 2023</i> - Eldar Kurtic, <u>Elias Frantar</u>, Dan Alistarh</h6>
+<hr>
+<h4>CAP: Correlation-Aware Pruning for Highly-Accurate Sparse Vision Models</h4>
+<h6><i>NeurIPS 2023</i> - Denis Kuznedelev, Eldar Kurtic, <u>Elias Frantar</u>, Dan Alistarh</h6>
+<hr>
+<h4>The Optimal BERT Surgeon: Scalable and Accurate Second-Order Pruning for Large Language Models</h4>
+<h6><i>EMNLP 2022</i> - E. Kurtic, D. Campos, T. Nguyen, <u>E. Frantar</u>, M. Kurtz, B. Fineran, ...</h6>
+<hr>
+<h4>On the Sample Complexity of Adversarial Multi-Source PAC Learning</h4>
+<h6><i>ICML 2020</i> - Nikola Konstantinov, <u>Elias Frantar</u>, Dan Alistarh, Christoph Lampert</h6>
+<hr>
+
+<h2 id="contact">Contact</h2>
+
+first-name [dot] last-name [at] (gmail [dot] com OR ist [dot] ac [dot] at)
+
+<div id="links"></div>
